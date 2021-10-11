@@ -19,7 +19,7 @@
             android:layout_width="310dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:background="@drawable/line_layout"
+            android:background="@drawable/line_layout_2"
             android:gravity="center"
             android:minWidth="310dp"
             android:minHeight="480dp"
@@ -29,7 +29,8 @@
                 android:id="@+id/imageBClose"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="105dp"
+                android:layout_marginStart="125dp"
+                android:background="@drawable/line_image"
                 android:src="@drawable/close_24"
                 android:contentDescription="@string/search_element_close" />
 
@@ -50,6 +51,7 @@
                 android:text="@{searchDialog.element}"
                 android:textSize="20sp"
                 android:textStyle="bold"
+                android:textColor="@color/white"
                 tools:text="H" />
 
             <TextView
@@ -59,6 +61,7 @@
                 android:gravity="center"
                 android:text="@{searchDialog.elementDeatail}"
                 android:textSize="20sp"
+                android:textColor="@color/white"
                 tools:text="Hidro" />
 
             <TextView
@@ -68,6 +71,7 @@
                 android:layout_marginTop="10dp"
                 android:gravity="center"
                 android:text="@{searchDialog.standartState}"
+                android:textColor="@color/white"
                 tools:text="standardStateTView" />
 
             <TextView
@@ -77,6 +81,7 @@
                 android:layout_marginTop="2dp"
                 android:gravity="center"
                 android:text="@{searchDialog.atomic}"
+                android:textColor="@color/white"
                 tools:text="atomicMassTView" />
 
             <TextView
@@ -86,6 +91,7 @@
                 android:layout_marginTop="2dp"
                 android:gravity="center"
                 android:text="@{searchDialog.electronAffinity}"
+                android:textColor="@color/white"
                 tools:text="electronConfigurationTView" />
 
             <TextView
@@ -95,6 +101,7 @@
                 android:layout_marginTop="2dp"
                 android:gravity="center"
                 android:text="@{searchDialog.oxidation}"
+                android:textColor="@color/white"
                 tools:text="oxidationStatesTView" />
 
             <TextView
@@ -104,6 +111,7 @@
                 android:layout_marginTop="2dp"
                 android:gravity="center"
                 android:text="@{searchDialog.electronegativity}"
+                android:textColor="@color/white"
                 tools:text="electronegativityTView" />
 
             <TextView
@@ -113,6 +121,7 @@
                 android:layout_marginTop="2dp"
                 android:gravity="center"
                 android:text="@{searchDialog.atomicRadius}"
+                android:textColor="@color/white"
                 tools:text="atomicRadiusTView" />
 
             <TextView
@@ -122,6 +131,7 @@
                 android:layout_marginTop="2dp"
                 android:gravity="center"
                 android:text="@{searchDialog.ionization}"
+                android:textColor="@color/white"
                 tools:text="ionizationEnergyTView" />
 
             <TextView
@@ -131,6 +141,7 @@
                 android:layout_marginTop="2dp"
                 android:gravity="center"
                 android:text="@{searchDialog.melting}"
+                android:textColor="@color/white"
                 tools:text="meltingPointTView" />
 
             <TextView
@@ -140,6 +151,7 @@
                 android:layout_marginTop="2dp"
                 android:gravity="center"
                 android:text="@{searchDialog.boiling}"
+                android:textColor="@color/white"
                 tools:text="boilingPointTView" />
 
             <TextView
@@ -149,6 +161,7 @@
                 android:layout_marginTop="2dp"
                 android:gravity="center"
                 android:text="@{searchDialog.density}"
+                android:textColor="@color/white"
                 tools:text="DensityTView" />
 
             <TextView
@@ -158,6 +171,7 @@
                 android:layout_marginTop="2dp"
                 android:gravity="center"
                 android:text="@{searchDialog.year}"
+                android:textColor="@color/white"
                 tools:text="yearDiscoveredTView" />
         </LinearLayout>
     </ScrollView>
