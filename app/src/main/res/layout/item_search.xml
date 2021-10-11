@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="search"
+            type="com.example.periodictable.model.DialogElements" />
+
+    </data>
+
+    <LinearLayout
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/searcCardView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp"
+            app:cardCornerRadius="10dp">
+
+            <ImageView
+                android:id="@+id/imageViewSearch"
+                android:layout_width="80dp"
+                android:layout_height="75dp"
+                android:layout_marginStart="2dp"
+                app:loadImage="@{search.image}"
+                tools:src="@mipmap/ic_launcher_round"
+                android:contentDescription="@string/element_search_image" />
+
+            <TextView
+                android:id="@+id/tViewName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="100dp"
+                android:layout_marginTop="20sp"
+                android:text="@{search.element}"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                tools:text="H" />
+
+            <TextView
+                android:id="@+id/tViewDetailName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="140dp"
+                android:layout_marginTop="20sp"
+                android:text="@{search.elementDeatail}"
+                android:textSize="20sp"
+                tools:text="H" />
+
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+</layout>
