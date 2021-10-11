@@ -74,7 +74,7 @@
 
             <ImageView
                 android:id="@+id/pImageName"
-                android:layout_width="290dp"
+                android:layout_width="match_parent"
                 android:layout_height="200dp"
                 android:layout_marginTop="15dp"
                 app:loadImage="@{alert.imageElements}"

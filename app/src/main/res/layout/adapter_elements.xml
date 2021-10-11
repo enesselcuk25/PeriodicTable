@@ -14,21 +14,20 @@
     </data>
 
     <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
         android:background="@drawable/line_adapter_element"
         android:orientation="horizontal">
 
         <LinearLayout
             android:id="@+id/layouPeriodik"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:layout_marginStart="5dp"
-            android:layout_marginTop="5dp"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
             android:maxHeight="80dp"
             android:minHeight="60dp"
+            android:layout_marginStart="2dp"
+            android:layout_gravity="center"
             android:orientation="vertical"
-            android:paddingEnd="3dp"
             android:background="@drawable/line_adapter_element"
             app:setBackground = "@{Element.baccround}"
             tools:ignore="RtlSymmetry">
@@ -37,7 +36,7 @@
                 android:id="@+id/eNumber"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="2dp"
+                android:layout_marginStart="5dp"
                 android:text="@{String.valueOf(Element.index)}"
                 android:textColor="@{Element.textColor}"
                 tools:text="1." />
@@ -58,6 +57,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
+                android:layout_marginStart="4dp"
+                android:textSize="12sp"
                 android:text="@{Element.elementDetailName}"
                 android:textColor="@{Element.textColor}"
                 tools:text="Hydrogen" />

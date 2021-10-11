@@ -5,7 +5,6 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
         <variable
             name="searchDialog"
             type="com.example.periodictable.model.DialogElements" />
@@ -41,7 +40,6 @@
                 app:loadImage="@{searchDialog.image}"
                 tools:src="@mipmap/ic_launcher_round"
                 android:contentDescription="@string/elemenent_search_image" />
-
 
             <TextView
                 android:id="@+id/elementTView"
