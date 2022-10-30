@@ -1,22 +1,31 @@
 <resources>
     <string name="app_name">PeriodicTable</string>
     <string name="title_activity_splash">SplashActivity</string>
-    <!-- Strings used for fragments for navigation -->
-    <string name="first_fragment_label">First Fragment</string>
-    <string name="second_fragment_label">Second Fragment</string>
-    <string name="next">Next</string>
-    <string name="previous">Previous</string>
-
-    <string name="hello_first_fragment">Hello first fragment</string>
-    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
-    <string name="get_ready">get ready</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="search">Search</string>
-    <string name="fragmentsearch">fragmentSearch</string>
-    <string name="element_search_image">Element Search image</string>
-    <string name="search_element_close">Search element close</string>
-    <string name="elemenent_search_image">Elemenent search image</string>
-    <string name="dialog_element_close">Dialog element close</string>
-    <string name="dialog_element_image">Dialog element image</string>
+    <string name="search">Ara</string>
+    <string name="fragmentsearch">fragment Ara</string>
+    <string name="element_search_image">Element aram resmi</string>
+    <string name="search_element_close">arama iconu kapatma</string>
+    <string name="elemenent_search_image">Element arama resmi</string>
+    <string name="dialog_element_close">Dialog elementi kapatma</string>
+    <string name="dialog_element_image">Dialog element resmş</string>
+    <string name="image_search">arama resmi</string>
+    <string name="item_search_wikipedia">search itemdaki wikipedia iconu</string>
+    <string name="general">Genel</string>
+    <string name="theme_choose_dialog">Tema</string>
+    <string name="Theme">Karanlık</string>
+    <string name="language_change">Dil Değiştir</string>
+    <string name="others">Diğerleri</string>
+    <string name="version">Versiyon</string>
+    <string name="verison_number">1.0</string>
+    <string name="rate_us">Değerlendir</string>
+    <string name="show_us_support">Bize Desteğinizi gösterin</string>
+    <string name="share">Paylaş</string>
+    <string name="share_app">Bu app paylaşarak insanları bilgilendirebilirsiniz</string>
+    <string name="tukce">Türkçe</string>
+    <string name="english">İngilizce</string>
+    <string name="wikipedia">Wikipedia</string>
+    <string name="periodic_table">Periodik tablo</string>
+    <string name="light_type">Aydınlık</string>
+    <string name="dark_type">Karanlık</string>
+    <string name="kapat">Kapat</string>
 </resources>

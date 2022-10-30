@@ -1,50 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <LinearLayout
+    <data>
+
+        <variable
+            name="click"
+            type="com.example.periodictable.ui.home.HomeFragment" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:configChanges="uiMode"
         android:orientation="vertical">
 
-        <LinearLayout
+        <include
+            android:id="@+id/include_toolbar"
+            layout="@layout/toolbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <androidx.appcompat.widget.Toolbar
-                android:id="@+id/toolbar"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/dark"
-                app:itemIconTint="@color/white"
-                app:itemRippleColor="@color/white"
-                app:itemTextColor="@color/white"
-                tools:ignore="MissingConstraints" />
-
-        </LinearLayout>
+            ads:layout_constraintBottom_toTopOf="@id/scrollView"
+            ads:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:searchFrag="@{click}" />
 
 
         <ScrollView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:id="@+id/scrollView"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/include_toolbar">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                tools:context=".view.HomeFragment">
+                tools:context=".ui.HomeFragment">
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/recView"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layoutAnimation="@anim/layoutanimation" />
+                    android:layoutAnimation="@anim/layoutanimation"
+                    android:orientation="horizontal"
+                    app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                    app:reverseLayout="false"
+                    app:spanCount="10" />
+
+                <com.google.android.gms.ads.AdView
+                    android:id="@+id/adView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginVertical="10dp"
+                    ads:adSize="BANNER"
+                    ads:adUnitId="ca-app-pub-9758804960858015/3483529680" />
 
             </LinearLayout>
         </ScrollView>
-
-    </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

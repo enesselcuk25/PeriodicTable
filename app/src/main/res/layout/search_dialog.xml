@@ -5,24 +5,22 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
             name="searchDialog"
-            type="com.example.periodictable.model.DialogElements" />
+            type="com.example.periodictable.source.model.ElementsDetails" />
     </data>
 
     <ScrollView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
 
-        <LinearLayout
-            android:layout_width="310dp"
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
             android:background="@drawable/line_layout_2"
-            android:gravity="center"
-            android:minWidth="310dp"
-            android:minHeight="480dp"
-            android:orientation="vertical">
+            android:paddingTop="10dp">
 
             <ImageButton
                 android:id="@+id/imageBClose"
@@ -30,147 +28,182 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="125dp"
                 android:background="@drawable/line_image"
+                android:contentDescription="@string/search_element_close"
                 android:src="@drawable/close_24"
-                android:contentDescription="@string/search_element_close" />
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <ImageView
                 android:id="@+id/dialogImageView"
-                android:layout_width="120dp"
-                android:layout_height="120dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/elemenent_search_image"
+                android:maxWidth="120dp"
+                android:maxHeight="120dp"
+                android:minWidth="100dp"
+                android:minHeight="100dp"
+                app:layout_constraintEnd_toStartOf="@id/imageBClose"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
                 app:loadImage="@{searchDialog.image}"
-                tools:src="@mipmap/ic_launcher_round"
-                android:contentDescription="@string/elemenent_search_image" />
+                tools:src="@mipmap/ic_launcher_round" />
 
-            <TextView
-                android:id="@+id/elementTView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="@{searchDialog.element}"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                android:textColor="@color/white"
-                tools:text="H" />
 
-            <TextView
-                android:id="@+id/elementDetailTView"
-                android:layout_width="match_parent"
+            <ImageView
+                android:id="@+id/imageViewWikipedia"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="@{searchDialog.elementDeatail}"
-                android:textSize="20sp"
-                android:textColor="@color/white"
-                tools:text="Hidro" />
+                android:layout_marginHorizontal="20dp"
+                android:contentDescription="@string/item_search_wikipedia"
+                android:src="@drawable/wikipedia"
+                app:layout_constraintEnd_toStartOf="@+id/imageBClose"
+                app:layout_constraintTop_toTopOf="parent" />
 
-            <TextView
-                android:id="@+id/standardStateTView"
-                android:layout_width="match_parent"
+            <LinearLayout
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:gravity="center"
-                android:text="@{searchDialog.standartState}"
-                android:textColor="@color/white"
-                tools:text="standardStateTView" />
+                android:minWidth="310dp"
+                android:minHeight="400dp"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/dialogImageView">
 
-            <TextView
-                android:id="@+id/atomicMassTView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="2dp"
-                android:gravity="center"
-                android:text="@{searchDialog.atomic}"
-                android:textColor="@color/white"
-                tools:text="atomicMassTView" />
 
-            <TextView
-                android:id="@+id/electronConfigurationTView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="2dp"
-                android:gravity="center"
-                android:text="@{searchDialog.electronAffinity}"
-                android:textColor="@color/white"
-                tools:text="electronConfigurationTView" />
+                <TextView
+                    android:id="@+id/elementTView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@{searchDialog.element}"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    tools:text="H" />
 
-            <TextView
-                android:id="@+id/oxidationStatesTView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="2dp"
-                android:gravity="center"
-                android:text="@{searchDialog.oxidation}"
-                android:textColor="@color/white"
-                tools:text="oxidationStatesTView" />
+                <TextView
+                    android:id="@+id/elementDetailTView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@{searchDialog.elementDetail}"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    tools:text="Hidro" />
 
-            <TextView
-                android:id="@+id/electronegativityTView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="2dp"
-                android:gravity="center"
-                android:text="@{searchDialog.electronegativity}"
-                android:textColor="@color/white"
-                tools:text="electronegativityTView" />
+                <TextView
+                    android:id="@+id/standardStateTView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center"
+                    android:text="@{searchDialog.standartState}"
+                    android:textColor="@color/white"
+                    tools:text="standardStateTView" />
 
-            <TextView
-                android:id="@+id/atomicRadiusTView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="2dp"
-                android:gravity="center"
-                android:text="@{searchDialog.atomicRadius}"
-                android:textColor="@color/white"
-                tools:text="atomicRadiusTView" />
+                <TextView
+                    android:id="@+id/atomicMassTView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:gravity="center"
+                    android:text="@{searchDialog.atomic}"
+                    android:textColor="@color/white"
+                    tools:text="atomicMassTView" />
 
-            <TextView
-                android:id="@+id/ionizationEnergyTView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="2dp"
-                android:gravity="center"
-                android:text="@{searchDialog.ionization}"
-                android:textColor="@color/white"
-                tools:text="ionizationEnergyTView" />
+                <TextView
+                    android:id="@+id/electronConfigurationTView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:gravity="center"
+                    android:text="@{searchDialog.electronAffinity}"
+                    android:textColor="@color/white"
+                    tools:text="electronConfigurationTView" />
 
-            <TextView
-                android:id="@+id/meltingPointTView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="2dp"
-                android:gravity="center"
-                android:text="@{searchDialog.melting}"
-                android:textColor="@color/white"
-                tools:text="meltingPointTView" />
+                <TextView
+                    android:id="@+id/oxidationStatesTView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:gravity="center"
+                    android:text="@{searchDialog.oxidation}"
+                    android:textColor="@color/white"
+                    tools:text="oxidationStatesTView" />
 
-            <TextView
-                android:id="@+id/boilingPointTView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="2dp"
-                android:gravity="center"
-                android:text="@{searchDialog.boiling}"
-                android:textColor="@color/white"
-                tools:text="boilingPointTView" />
+                <TextView
+                    android:id="@+id/electronegativityTView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:gravity="center"
+                    android:text="@{searchDialog.electronegativity}"
+                    android:textColor="@color/white"
+                    tools:text="electronegativityTView" />
 
-            <TextView
-                android:id="@+id/densityTView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="2dp"
-                android:gravity="center"
-                android:text="@{searchDialog.density}"
-                android:textColor="@color/white"
-                tools:text="DensityTView" />
+                <TextView
+                    android:id="@+id/atomicRadiusTView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:gravity="center"
+                    android:text="@{searchDialog.atomicRadius}"
+                    android:textColor="@color/white"
+                    tools:text="atomicRadiusTView" />
 
-            <TextView
-                android:id="@+id/yearDiscoveredTView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="2dp"
-                android:gravity="center"
-                android:text="@{searchDialog.year}"
-                android:textColor="@color/white"
-                tools:text="yearDiscoveredTView" />
-        </LinearLayout>
+                <TextView
+                    android:id="@+id/ionizationEnergyTView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:gravity="center"
+                    android:text="@{searchDialog.ionization}"
+                    android:textColor="@color/white"
+                    tools:text="ionizationEnergyTView" />
+
+                <TextView
+                    android:id="@+id/meltingPointTView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:gravity="center"
+                    android:text="@{searchDialog.melting}"
+                    android:textColor="@color/white"
+                    tools:text="meltingPointTView" />
+
+                <TextView
+                    android:id="@+id/boilingPointTView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:gravity="center"
+                    android:text="@{searchDialog.boiling}"
+                    android:textColor="@color/white"
+                    tools:text="boilingPointTView" />
+
+                <TextView
+                    android:id="@+id/densityTView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:gravity="center"
+                    android:text="@{searchDialog.density}"
+                    android:textColor="@color/white"
+                    tools:text="DensityTView" />
+
+                <TextView
+                    android:id="@+id/yearDiscoveredTView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:gravity="center"
+                    android:text="@{searchDialog.year}"
+                    android:textColor="@color/white"
+                    tools:text="yearDiscoveredTView" />
+
+            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
     </ScrollView>
 </layout>
