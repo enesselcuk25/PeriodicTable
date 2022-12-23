@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.periodictable.ui.home.HomeFragment"
+        android:label="HomeFragment"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_homeFragment_to_searchFragment"
+            app:destination="@id/searchFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_settingFragment"
+            app:destination="@id/settingFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_dialogElementsFragment"
+            app:destination="@id/dialogElementsFragment"
+
+
+            />
+    </fragment>
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="com.example.periodictable.ui.search.SearchFragment"
+        android:label="fragment_search"
+        tools:layout="@layout/fragment_search">
+        <action
+            android:id="@+id/action_searchFragment_to_bottomSheetFragment"
+            app:destination="@id/bottomSheetFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/settingFragment"
+        android:name="com.example.periodictable.ui.settings.SettingFragment"
+        android:label="SettingFragment"
+        tools:layout="@layout/fragment_settings">
+        <action
+            android:id="@+id/action_settingFragment_to_dialogLanguageFragment"
+            app:destination="@id/dialogLanguageFragment" />
+        <action
+            android:id="@+id/action_settingFragment_to_dialogTypeFragment"
+            app:destination="@id/dialogTypeFragment" />
+    </fragment>
+    <dialog
+        android:id="@+id/dialogLanguageFragment"
+        android:name="com.example.periodictable.ui.dialog.DialogLanguageFragment"
+        android:label="DialogLanguageFragment"
+        tools:layout="@layout/language_dialog_fragment" />
+    <dialog
+        android:id="@+id/bottomSheetFragment"
+        android:name="com.example.periodictable.ui.detail.ElementDetailBottomSFragment"
+        android:label="BottomSheetFragment"
+        tools:layout="@layout/fragment_bottom_sheet">
+
+        <argument
+            android:name="elementWiki"
+            app:argType="com.example.periodictable.source.model.ElementsDetails" />
+
+    </dialog>
+    <dialog
+        android:id="@+id/dialogElementsFragment"
+        android:name="com.example.periodictable.ui.dialog.DialogElementsFragment"
+        android:label="DialogElementsFragment"
+        tools:layout="@layout/fragment_element_dialog">
+
+        <argument
+            android:name="elements"
+            app:argType="com.example.periodictable.source.model.Elements" />
+    </dialog>
+    <dialog
+        android:id="@+id/dialogTypeFragment"
+        android:name="com.example.periodictable.ui.dialog.DialogTypeFragment"
+        android:label="DialogTypeFragment"
+        tools:layout="@layout/type_dialog_fragment" />
+
+
+
+</navigation>

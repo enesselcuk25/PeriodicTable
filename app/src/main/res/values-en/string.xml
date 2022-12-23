@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">PeriodicTable</string>
+    <string name="title_activity_splash">SplashActivity</string>
+    <string name="search">Search</string>
+    <string name="fragmentsearch">fragmentSearch</string>
+    <string name="element_search_image">Element Search image</string>
+    <string name="search_element_close">Search element close</string>
+    <string name="elemenent_search_image">Elemenent search image</string>
+    <string name="dialog_element_close">Dialog element close</string>
+    <string name="dialog_element_image">Dialog element image</string>
+    <string name="image_search">image_search</string>
+    <string name="item_search_wikipedia">item search wikipedia</string>
+    <string name="general">General</string>
+    <string name="theme_choose_dialog">Theme</string>
+    <string name="Theme">Dark</string>
+    <string name="language_change">Language Change</string>
+    <string name="others">Others</string>
+    <string name="version">Version</string>
+    <string name="verison_number">1.0</string>
+    <string name="rate_us">Rate Us</string>
+    <string name="show_us_support">Show us your support</string>
+    <string name="share">Share</string>
+    <string name="share_app">You can inform people by sharing this app</string>
+    <string name="tukce">Turkish</string>
+    <string name="english">English</string>
+    <string name="wikipedia">Wikipedia</string>
+    <string name="periodic_table">Periodic table</string>
+    <string name="light_type">Light</string>
+    <string name="dark_type">Dark</string>
+    <string name="kapat">Close</string>
+</resources>

@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="elements"
+            type="com.example.periodictable.source.model.Elements" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/alertLayout"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@drawable/line_layout_3"
+        android:orientation="vertical"
+        android:paddingBottom="10dp">
+
+        <ImageButton
+            android:id="@+id/imaBtnClose"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="5dp"
+            android:layout_marginVertical="5dp"
+            android:background="@drawable/line_image"
+            android:contentDescription="@string/dialog_element_close"
+            android:src="@drawable/close_24"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/pNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="10dp"
+            android:layout_marginStart="10dp"
+            android:text="@{Integer.toString(elements.index)}"
+            android:textColor="@color/white"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@id/pName"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="1" />
+
+
+        <TextView
+            android:id="@+id/pName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:text="@{elements.elementName}"
+            android:textColor="@color/white"
+            android:textSize="35sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@id/pImageName"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/pNumber"
+            tools:text="B" />
+
+        <TextView
+            android:id="@+id/pDetailName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@{elements.elementDetailName}"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@id/pName"
+            app:layout_constraintEnd_toStartOf="@id/imageView_wikipedia"
+            app:layout_constraintStart_toEndOf="@id/pName"
+            app:layout_constraintTop_toTopOf="@id/pName"
+            tools:text="lşsdfjssfd" />
+
+
+        <ImageView
+            android:id="@+id/imageView_wikipedia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/wikipedia"
+            app:layout_constraintBottom_toBottomOf="@id/pDetailName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/pDetailName"
+            app:layout_constraintTop_toTopOf="@id/pDetailName" />
+
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/pImageName"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginBottom="10dp"
+            android:contentDescription="@string/dialog_element_image"
+            android:maxWidth="260dp"
+            android:minWidth="250dp"
+            android:scaleType="fitXY"
+            android:src="@mipmap/ic_launcher_round"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/pDetailName"
+            app:loadImage="@{elements.imageElements}"
+            app:shapeAppearance="@style/bottomImageView_bottom" />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/line_detail"
+            android:src="@drawable/analyse_svgrepo_com"
+            app:layout_constraintBottom_toBottomOf="@id/pImageName"
+            app:layout_constraintEnd_toEndOf="@id/pImageName"
+            app:layout_constraintTop_toBottomOf="@id/pImageName" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

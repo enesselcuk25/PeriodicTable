@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="dataSet"
+            type="com.example.periodictable.source.model.ElementsDetails" />
+
+        <variable
+            name="click"
+            type="com.example.periodictable.ui.detail.ElementDetailBottomSFragment" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/imageViewSearch"
+                android:layout_width="match_parent"
+                android:layout_height="230dp"
+                android:contentDescription="@string/element_search_image"
+                android:padding="20dp"
+                android:scaleType="fitXY"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:loadImage="@{dataSet.image}"
+                app:shapeAppearance="@style/bottomImageView_bottom"
+                tools:src="@mipmap/ic_launcher_round" />
+
+            <TextView
+                android:id="@+id/textView_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="50dp"
+                android:text="@{dataSet.elementDetail}"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@id/textview_standart_state"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/imageViewSearch"
+                tools:text="Hydrogen" />
+
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/textview_standart_state"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:padding="10dp"
+                android:text="@{dataSet.standartState}"
+                android:textSize="15sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textView_name" />
+
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/textview_atomic_mas"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:padding="10dp"
+                android:text="@{dataSet.atomic}"
+                android:textSize="15sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textview_standart_state" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/textview_electron"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:padding="10dp"
+                android:text="@{dataSet.electron}"
+                android:textSize="15sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textview_atomic_mas" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/textview_xxidation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:padding="10dp"
+                android:text="@{dataSet.oxidation}"
+                android:textSize="15sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textview_electron" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/textview_electronegativity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:padding="10dp"
+                android:text="@{dataSet.electronegativity}"
+                android:textSize="15sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textview_xxidation" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/textview_atomic_radius"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:padding="10dp"
+                android:text="@{dataSet.atomicRadius}"
+                android:textSize="15sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textview_electronegativity" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/textview_ionization"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:padding="10dp"
+                android:text="@{dataSet.Ionization}"
+                android:textSize="15sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textview_atomic_radius" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/textview_electron_affinity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:padding="10dp"
+                android:text="@{dataSet.electronAffinity}"
+                android:textSize="15sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textview_ionization" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/textview_melting"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:padding="10dp"
+                android:text="@{dataSet.melting}"
+                android:textSize="15sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textview_electron_affinity" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/textview_boiling"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:padding="10dp"
+                android:text="@{dataSet.boiling}"
+                android:textSize="15sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textview_melting" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/textview_density"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:padding="10dp"
+                android:text="@{dataSet.density}"
+                android:textSize="15sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textview_boiling" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/textview_year_discovered"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:padding="10dp"
+                android:text="@{dataSet.year}"
+                android:textSize="15sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textview_density" />
+
+            <com.google.android.material.button.MaterialButtonToggleGroup
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/imageViewSearch">
+
+                <com.google.android.material.button.MaterialButton
+                    style="?attr/materialButtonOutlinedStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/wikipedia"
+                    android:onClick="@{() -> click.linkClick()}"
+                    android:text="@string/wikipedia"
+                    android:textAllCaps="false" />
+
+            </com.google.android.material.button.MaterialButtonToggleGroup>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </ScrollView>
+
+
+</layout>
