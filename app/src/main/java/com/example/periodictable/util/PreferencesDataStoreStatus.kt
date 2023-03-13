@@ -18,21 +18,17 @@ import java.util.Locale
 object PreferencesDataStoreStatus {
     private const val DARK_STATUS = "darkStatus"
     val Context.dataStore: DataStore<Preferences> by preferencesDataStore(DARK_STATUS)
-    val dataStoreDarkKey = booleanPreferencesKey("dark")
+    var dataStoreDarkKey = booleanPreferencesKey("dark")
     suspend fun status(context: Context, status: Boolean) {
-        context.dataStore.edit {
-            it[dataStoreDarkKey] = status
-        }
+        context.dataStore.edit { it[dataStoreDarkKey] = status }
     }
 
     private const val LANGUAGECHOOSE = "language"
     val Context.dataStoreLanguage: DataStore<Preferences> by preferencesDataStore(LANGUAGECHOOSE)
-    val dataStoreLangKey = stringPreferencesKey("lang")
+    var dataStoreLangKey = stringPreferencesKey("lang")
 
     suspend fun setLanguage(context: Context, lang: String) {
-        context.dataStoreLanguage.edit {
-            it[dataStoreLangKey] = lang
-        }
+        context.dataStoreLanguage.edit { it[dataStoreLangKey] = lang }
     }
 
     @RequiresApi(Build.VERSION_CODES.N)

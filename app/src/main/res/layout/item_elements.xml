@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
@@ -11,63 +10,47 @@
             type="com.example.periodictable.source.model.Elements" />
     </data>
 
+
     <LinearLayout
+        android:id="@+id/homeLayouPeriodik"
         android:layout_width="80dp"
         android:layout_height="80dp"
+        android:layout_marginStart="2dp"
         android:layout_marginTop="1dp"
         android:layout_marginEnd="1dp"
-        android:background="@drawable/line_adapter_element"
-        android:orientation="horizontal">
+        android:orientation="vertical"
+        tools:background="@drawable/line_adapter_element"
+        tools:ignore="RtlSymmetry">
 
-        <LinearLayout
-            android:id="@+id/homeLayouPeriodik"
+        <TextView
+            android:id="@+id/eNumber"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="5dp"
+            android:textStyle="bold"
+            tools:text="1." />
+
+        <TextView
+            android:id="@+id/eTitle"
+            android:layout_width="match_parent"
+            android:gravity="center"
+            android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginStart="2dp"
-            android:background="@drawable/line_adapter_element"
-            android:maxHeight="80dp"
-            android:minHeight="60dp"
-            android:orientation="vertical"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:setBackground="@{Element.backround}"
+            android:layout_marginTop="-2dp"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            tools:text="H" />
 
-            tools:ignore="RtlSymmetry">
+        <TextView
+            android:id="@+id/eName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            tools:text="Hydrogen" />
 
-            <TextView
-                android:id="@+id/eNumber"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="5dp"
-                android:text="@{String.valueOf(Element.index)}"
-                android:textColor="@color/white"
-                tools:text="1." />
-
-            <TextView
-                android:id="@+id/eTitle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="-2dp"
-                android:text="@{Element.elementName}"
-                android:textColor="@color/white"
-                android:textSize="20sp"
-                tools:text="H" />
-
-            <TextView
-                android:id="@+id/eName"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="4dp"
-                android:layout_marginTop="5dp"
-                android:text="@{Element.elementDetailName}"
-                android:textColor="@color/white"
-                android:textSize="12sp"
-                tools:text="Hydrogen" />
-
-        </LinearLayout>
     </LinearLayout>
+
 </layout>

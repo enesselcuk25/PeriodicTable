@@ -18,18 +18,6 @@
         android:configChanges="uiMode"
         android:orientation="vertical">
 
-        <include
-            android:id="@+id/include_toolbar"
-            layout="@layout/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            ads:layout_constraintBottom_toTopOf="@id/scrollView"
-            ads:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:searchFrag="@{click}" />
-
-
         <ScrollView
             android:id="@+id/scrollView"
             android:layout_width="0dp"
@@ -37,7 +25,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/include_toolbar">
+            app:layout_constraintTop_toTopOf="parent">
 
             <LinearLayout
                 android:layout_width="match_parent"

@@ -6,6 +6,7 @@ import androidx.navigation.fragment.navArgs
 import com.example.periodictable.R
 import com.example.periodictable.common.BaseBottomFragment
 import com.example.periodictable.databinding.FragmentBottomSheetBinding
+import com.example.periodictable.ui.HomeActivity
 import dagger.hilt.android.AndroidEntryPoint
 
 
@@ -21,6 +22,8 @@ class ElementDetailBottomSFragment :
             arrayLink.add(it.elementDetail)
         }
         binding.click = this@ElementDetailBottomSFragment
+
+        (requireActivity() as HomeActivity).backVisible(true)
     }
 
     fun linkClick() {

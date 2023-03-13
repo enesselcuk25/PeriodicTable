@@ -12,6 +12,7 @@ import com.example.periodictable.common.BaseFragment
 import com.example.periodictable.databinding.FragmentHomeBinding
 import com.example.periodictable.source.dummyData.ElementsDummyData
 import com.example.periodictable.source.model.Elements
+import com.example.periodictable.ui.HomeActivity
 import com.example.periodictable.util.PreferencesDataStoreStatus.status
 import com.google.android.gms.ads.*
 import com.google.android.gms.ads.interstitial.InterstitialAd
@@ -35,19 +36,13 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
         }
         elementsAdapter.listModel = ElementsDummyData.listAdapter
         bannerAdMob()
+
+        (requireActivity() as HomeActivity).backVisible(false)
     }
 
     private fun onCLickElement(element: Elements) {
         val action = HomeFragmentDirections.actionHomeFragmentToDialogElementsFragment(element)
         findNavController().navigate(action)
-    }
-
-    fun toSearchFrag() {
-        findNavController().navigate(R.id.searchFragment)
-    }
-
-    fun toSettingsFrag() {
-        findNavController().navigate(R.id.settingFragment)
     }
 
     private fun bannerAdMob() {

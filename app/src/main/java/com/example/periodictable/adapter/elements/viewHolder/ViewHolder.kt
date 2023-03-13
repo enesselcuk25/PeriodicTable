@@ -30,12 +30,14 @@ class ViewHolder(
 
     fun bind(elements: Elements) {
         with(binding) {
-            element = elements
-            homeLayouPeriodik.animation =
-                AnimationUtils.loadAnimation(itemView.context, R.anim.item_animation)
-            homeLayouPeriodik.background = ColorDrawable(Color.TRANSPARENT)
-
-
+            homeLayouPeriodik.setBackgroundResource(elements.backround ?: R.drawable.line_adapter_element)
+            eNumber.text = elements.Index.toString()
+            eNumber.setTextColor(elements.textColor ?: R.color.white)
+            eName.text = elements.elementDetailName
+            eName.setTextColor(elements.textColor ?: R.color.white)
+            eTitle.text = elements.elementName
+            eTitle.setTextColor(elements.textColor ?: R.color.white)
+            homeLayouPeriodik.animation = AnimationUtils.loadAnimation(itemView.context, R.anim.item_animation)
         }
     }
 } 

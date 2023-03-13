@@ -8,13 +8,12 @@ import com.example.periodictable.common.BaseFragment
 import com.example.periodictable.databinding.FragmentSearchBinding
 import com.example.periodictable.source.dummyData.ElementSearchDummyData
 import com.example.periodictable.source.model.ElementsDetails
+import com.example.periodictable.ui.HomeActivity
 import com.example.periodictable.util.Abstract
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class SearchFragment : BaseFragment<FragmentSearchBinding>(FragmentSearchBinding::inflate) {
-
-    lateinit var dialogElements: ElementsDetails
     private var dialogElementSearch: ArrayList<ElementsDetails> = arrayListOf()
     private lateinit var searchAdapter: SearchAdapter
 
@@ -32,6 +31,8 @@ class SearchFragment : BaseFragment<FragmentSearchBinding>(FragmentSearchBinding
             searchAdapter.dialogElementArray = dialogElementSearch
             rViewSearch.adapter = searchAdapter
         }
+
+        (requireActivity() as HomeActivity).backVisible(true)
     }
 
     override fun search() {

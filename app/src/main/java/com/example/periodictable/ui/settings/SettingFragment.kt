@@ -7,8 +7,10 @@ import androidx.navigation.fragment.findNavController
 import com.example.periodictable.R
 import com.example.periodictable.common.BaseFragment
 import com.example.periodictable.databinding.FragmentSettingsBinding
+import com.example.periodictable.ui.HomeActivity
 import com.example.periodictable.util.PreferencesDataStoreStatus
 import com.example.periodictable.util.PreferencesDataStoreStatus.dataStore
+import com.example.periodictable.util.PreferencesDataStoreStatus.dataStoreLanguage
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.AdSize
 import com.google.android.gms.ads.AdView
@@ -34,36 +36,44 @@ class SettingFragment : BaseFragment<FragmentSettingsBinding>(FragmentSettingsBi
             linearlayoutShare.setOnClickListener {
                 val sendIntent: Intent = Intent().apply {
                     action = Intent.ACTION_SEND
-                    putExtra(
-                        Intent.EXTRA_TEXT,
-                        "https://play.google.com/store/apps/details?id=com.enes.Egezegenler"
-                    )
+                    putExtra(Intent.EXTRA_TEXT, "https://play.google.com/store/apps/details?id=com.eneselcuk.periodictable")
                     type = "text/plain"
                 }
                 val shareIntent = Intent.createChooser(sendIntent, null)
                 startActivity(shareIntent)
             }
         }
+        (requireActivity() as HomeActivity).backVisible(true)
         darkOrLight()
+        languageChange()
     }
 
     private fun darkOrLight() {
         lifecycleScope.launch {
-            requireContext().dataStore.data.map {
+            requireContext().dataStore.data.collectLatest {
                 when (it[PreferencesDataStoreStatus.dataStoreDarkKey]) {
                     true -> {
                         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
-                        binding.textviewThemeChoose.text =
-                            requireContext().getString(R.string.dark_type)
+                        binding.textviewThemeChoose.text = getString(R.string.dark_type)
                     }
                     false -> {
                         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
-                        binding.textviewThemeChoose.text =
-                            requireContext().getString(R.string.light_type)
+                        binding.textviewThemeChoose.text = getString(R.string.light_type)
                     }
                     else -> {
                         throw Exception("oops")
                     }
+                }
+            }
+        }
+    }
+
+    private fun languageChange(){
+        lifecycleScope.launch {
+            requireContext().dataStoreLanguage.data.collectLatest {
+                when(it[PreferencesDataStoreStatus.dataStoreLangKey]){
+                    "tr" -> binding.textviewLanguageChoose.text = getString(R.string.tukce)
+                    "en" -> binding.textviewLanguageChoose.text = getString(R.string.english)
                 }
             }
         }

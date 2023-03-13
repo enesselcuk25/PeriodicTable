@@ -12,8 +12,8 @@ data class Elements(
     @ColumnInfo(name = "index") val Index: Int,
     @ColumnInfo(name = "element_name") val elementName: String?,
     @ColumnInfo(name = "element_detail_name") val elementDetailName: String?,
-    @ColumnInfo(name = "backround") val backround: Int,
-    @ColumnInfo(name = "text_colour") val textColor: Int,
+    @ColumnInfo(name = "backround") val backround: Int? = null,
+    @ColumnInfo(name = "text_colour") val textColor: Int? = null,
     @PrimaryKey val id: Int? = null,
 ) : Parcelable, PeriodicType() {
     override fun getType(): Int {

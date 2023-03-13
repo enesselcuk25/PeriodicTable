@@ -4,11 +4,17 @@ package com.example.periodictable.ui
 import android.content.Context
 import android.os.Build
 import android.os.Bundle
+import android.view.View
 import android.view.WindowInsets
 import android.view.WindowManager
+import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.findNavController
+import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.fragment.findNavController
+import com.example.periodictable.R
 import com.example.periodictable.databinding.ActivityMainBinding
 import com.example.periodictable.util.PreferencesDataStoreStatus.dataStoreLangKey
 import com.example.periodictable.util.PreferencesDataStoreStatus.dataStoreLanguage
@@ -30,18 +36,37 @@ class HomeActivity : AppCompatActivity() {
         setContentView(binding.root)
         fullScreen()
         getLanguage()
+        initViews()
     }
 
 
     private fun fullScreen() {
-        @Suppress("DEPRECATION")
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
-            window.insetsController?.hide(WindowInsets.Type.statusBars())
-        } else {
-            window.setFlags(
-                WindowManager.LayoutParams.FLAG_FULLSCREEN,
-                WindowManager.LayoutParams.FLAG_FULLSCREEN
-            )
+        window.setFlags(
+            WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
+            WindowManager.LayoutParams.WRAP_CONTENT
+        )
+    }
+
+    private fun initViews(){
+        with(binding){
+            click = this@HomeActivity
+        }
+    }
+    fun toSearchFrag() {
+       findNavController(R.id.nav_host_fragment).navigate(R.id.searchFragment)
+    }
+    fun toSettingsFrag() {
+        findNavController(R.id.nav_host_fragment).navigate(R.id.settingFragment)
+    }
+    fun toBack(){
+        findNavController(R.id.nav_host_fragment).popBackStack()
+    }
+
+    fun backVisible(visible:Boolean){
+        if(visible){
+            binding.includeToolbar.imageBack.visibility = View.VISIBLE
+        }else {
+            binding.includeToolbar.imageBack.visibility = View.GONE
         }
     }
 
