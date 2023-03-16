@@ -32,12 +32,13 @@ class PeriodicApplication : Application() {
         with(ProcessLifecycleOwner.get()) {
             lifecycleScope.launch(Dispatchers.Main) {
                 context.dataStore.data.collectLatest {
-                    if(it[PreferencesDataStoreStatus.dataStoreDarkKey] == false){
-                        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+                    when(it[PreferencesDataStoreStatus.dataStoreDarkKey]){
+                        true ->  AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+                        false -> AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+                        else -> AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM)
+
                     }
-                    else {
-                        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
-                    }
+
                 }
             }
         }

@@ -38,11 +38,11 @@ class SearchFragment : BaseFragment<FragmentSearchBinding>(FragmentSearchBinding
     override fun search() {
         val arrayElements = ArrayList<ElementsDetails>()
         binding.searchView.setOnQueryTextListener(object : Abstract.Search() {
-            override fun onQueryTextSubmit(query: String?): Boolean {
-                if (query != null) {
+            override fun onQueryTextChange(newText: String?): Boolean {
+                if (newText != null) {
                     arrayElements.clear()
                     for (i in dialogElementSearch) {
-                        if (i.elementDetail.contains(query)) {
+                        if (i.elementDetail.contains(newText)) {
                             arrayElements.add(i)
                         }
                     }

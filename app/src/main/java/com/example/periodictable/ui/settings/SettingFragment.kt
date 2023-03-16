@@ -1,9 +1,11 @@
 package com.example.periodictable.ui.settings
 
 import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
+import com.example.periodictable.BuildConfig
 import com.example.periodictable.R
 import com.example.periodictable.common.BaseFragment
 import com.example.periodictable.databinding.FragmentSettingsBinding
@@ -36,12 +38,23 @@ class SettingFragment : BaseFragment<FragmentSettingsBinding>(FragmentSettingsBi
             linearlayoutShare.setOnClickListener {
                 val sendIntent: Intent = Intent().apply {
                     action = Intent.ACTION_SEND
-                    putExtra(Intent.EXTRA_TEXT, "https://play.google.com/store/apps/details?id=com.eneselcuk.periodictable")
+                    putExtra(Intent.EXTRA_TEXT, "https://play.google.com/store/apps/details?id=com.enes.periodictable")
                     type = "text/plain"
                 }
                 val shareIntent = Intent.createChooser(sendIntent, null)
                 startActivity(shareIntent)
             }
+
+            linearlayoutDeger.setOnClickListener {
+                val url = "https://play.google.com/store/apps/details?id=com.enes.periodictable"
+                val urlAction = Intent(Intent.ACTION_VIEW)
+                urlAction.data = Uri.parse(url)
+                startActivity(urlAction)
+            }
+
+
+
+            textviewVerisonNo.text= BuildConfig.VERSION_CODE.toString()
         }
         (requireActivity() as HomeActivity).backVisible(true)
         darkOrLight()
@@ -60,9 +73,7 @@ class SettingFragment : BaseFragment<FragmentSettingsBinding>(FragmentSettingsBi
                         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
                         binding.textviewThemeChoose.text = getString(R.string.light_type)
                     }
-                    else -> {
-                        throw Exception("oops")
-                    }
+                    else -> AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM)
                 }
             }
         }
