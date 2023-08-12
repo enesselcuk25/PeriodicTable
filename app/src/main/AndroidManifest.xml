@@ -35,7 +35,6 @@
         <activity
             android:name=".ui.HomeActivity"
             android:exported="true"
-
             android:windowSoftInputMode="adjustPan">
         </activity>
     </application>

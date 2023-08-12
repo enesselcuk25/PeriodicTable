@@ -7,9 +7,8 @@ import android.os.CountDownTimer
 import androidx.appcompat.app.AppCompatActivity
 import com.example.periodictable.databinding.ActivitySplashBinding
 import com.example.periodictable.ui.HomeActivity
-import com.example.periodictable.ui.home.HomeFragment
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.*
+
 
 
 @AndroidEntryPoint

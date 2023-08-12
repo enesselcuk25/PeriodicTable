@@ -12,11 +12,12 @@ android {
     compileSdk 33
 
     defaultConfig {
-        applicationId "com.enesselcuk.periodictable"
+        applicationId "com.enes.periodictable"
         minSdk 21
         targetSdk 33
-        versionCode 2
+        versionCode 10
         versionName "2.0"
+        multiDexEnabled true
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -90,5 +91,8 @@ dependencies {
     //Preferences dataStore
     implementation "androidx.datastore:datastore-preferences:1.0.0"
 
+
+    def multidex_version = "2.0.1"
+    implementation "androidx.multidex:multidex:$multidex_version"
 
 }
